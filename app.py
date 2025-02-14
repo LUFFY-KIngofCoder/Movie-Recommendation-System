@@ -1,7 +1,15 @@
 import streamlit as st
 import pickle
 import requests
+import os
+import gdown
 
+fileid = "1R7cPEZ2H7jCKIbT3qmJV2n5FhG_xaRH8"
+savepath = "similarity.pkl"
+
+if not os.path.exists(savepath):
+    gdown.download(id=fileid, output=savepath, quiet=False)
+    
 # Set up page title
 st.title("Movie Recommendation System")
 
